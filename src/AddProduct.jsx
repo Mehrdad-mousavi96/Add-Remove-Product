@@ -1,26 +1,25 @@
 import React, {useState} from 'react';
 
 const AddProduct = ({onAdd}) => {
+
     const [title, setTitle] = useState('')
 
-    const sumbitForm = (e) => {
+    const submitHandler = (e) => {
         e.preventDefault()
-
         onAdd({title})
         setTitle('')
     }
 
     return (
-        <form onSubmit={sumbitForm}>
-            <div>
+        <div>
+            <form action="" onSubmit={submitHandler}>
                 <input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    type="text"
-                    placeholder={'add product'}/>
-                <button type={'submit'}>Add </button>
-            </div>
-        </form>
+                    type="text"/>
+                <button type={'submit'}>Add</button>
+            </form>
+        </div>
     );
 };
 
