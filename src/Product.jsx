@@ -1,19 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Product = ({title}) => {
+const Product = ({product, onDelete}) => {
 
-    const clickHandler = () => {
-        console.log('hi')
-    }
 
     return (
-        <>
+        <div style={{margin: "10px"}} >
+            <div>{product.title}</div>
             <div>
-                {title}
+                <button onClick={() => onDelete(product.id)} >
+                    Delete
+                </button>
             </div>
-            <button onClick={() => console.log('title')}>title</button>
-        </>
-
+        </div>
     );
 };
 
